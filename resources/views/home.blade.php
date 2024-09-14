@@ -8,7 +8,6 @@
 <div class="container my-5">
     <h2>Elenco dei Treni</h2>
 
-    <!-- Tabella con classi Bootstrap -->
     <table class="table table-striped table-bordered">
         <thead class="thead-dark">
             <tr>
