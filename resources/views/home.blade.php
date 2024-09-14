@@ -6,10 +6,11 @@
 
 @section('content')
 <div class="container my-5">
-    <h1>Lista dei Treni</h1>
+    <h2>Elenco dei Treni</h2>
 
-    <table>
-        <thead>
+    <!-- Tabella con classi Bootstrap -->
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
             <tr>
                 <th>Compagnia</th>
                 <th>Stazione di Partenza</th>
@@ -25,15 +26,15 @@
         <tbody>
             @foreach($trains as $train)
             <tr>
-                <td>{{ $train->company }}</td>
-                <td>{{ $train->departure_station }}</td>
-                <td>{{ $train->arrival_station }}</td>
-                <td>{{ $train->departure_time }}</td>
-                <td>{{ $train->arrival_time }}</td>
-                <td>{{ $train->train_code }}</td>
-                <td>{{ $train->number_of_carriages }}</td>
-                <td>{{ $train->on_time ? 'Sì' : 'No' }}</td>
-                <td>{{ $train->cancelled ? 'Sì' : 'No' }}</td>
+                <td>{{ $train->azienda }}</td>
+                <td>{{ $train->stazione_partenza }}</td>
+                <td>{{ $train->stazione_arrivo }}</td>
+                <td>{{ $train->orario_partenza }}</td>
+                <td>{{ $train->orario_arrivo }}</td>
+                <td>{{ $train->codice_treno }}</td>
+                <td>{{ $train->numero_carrozze }}</td>
+                <td>{{ $train->in_orario ? 'Sì' : 'No' }}</td>
+                <td>{{ $train->cancellato ? 'Sì' : 'No' }}</td>
             </tr>
             @endforeach
         </tbody>
@@ -42,5 +43,5 @@
 @endsection
 
 @section('titlePage')
-Lista Treni
+{{ $title }}
 @endsection

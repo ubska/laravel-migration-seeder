@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TrainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,7 @@ use App\Http\Controllers\TrainController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 
 Route::get('/', function () {
     $title = 'Layout base - HOME';
@@ -28,4 +29,4 @@ Route::get('/contatti', function () {
     return view('contacts');
 })->name('contacts');
 
-Route::get('/trains', [TrainController::class, 'index'])->name('trains');
+Route::get('/', [PageController::class, 'index'])->name('home');
